@@ -1,0 +1,27 @@
+{
+  "name": "hello-world-parcel",
+  "version": "1.0.0",
+  "description": "A blank Koji template with parcel bundler",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "koji-vcc watch &",
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madewithkoji/hello-world-parcel.git"
+  },
+  "keywords": [
+    "Koji",
+    "Hello World",
+    "Parcel"
+  ],
+  "author": "gron",
+  "license": "ISC",
+  "dependencies": {
+    "@withkoji/vcc": "^1.0.8",
+    "parcel-bundler": "^1.12.3"
+  }
+}
