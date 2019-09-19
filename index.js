@@ -2,9 +2,11 @@
  * index.js
  */
 
+import animation from 'nanoanimation'
 import html from 'choo/html'
-import devtools from 'choo-devtools'
 import choo from 'choo'
+
+import devtools from 'choo-devtools'
 
 import Koji from '@withkoji/vcc'
 
@@ -17,6 +19,7 @@ const mainView = (state, emit) => {
         background-color: ${colors.backgroundColor};
         color: ${colors.primaryColor};
         user-select: none;
+        overflow: hidden;
     `
 
     let stage = `
@@ -43,28 +46,7 @@ const mainView = (state, emit) => {
         width: 100%;
         height: 100%;
         background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
-        transform: rotateX(90deg) translateZ(-110px);
-        z-index: -1;
-    `
-
-    let animation = `
-        @keyframes move-eye-skew {
-            0% {
-            transform: none;
-            }
-            20% {
-            transform: translateX(-10vw) translateY(5vw) skewX(15deg) skewY(-10deg) scale(0.95);
-            }
-            25%, 44% {
-            transform: none;
-            }
-            50%, 60% {
-            transform: translateX(10vw) translateY(-5vw) skewX(5deg) skewY(2deg) scaleX(0.95);
-            }
-            66%, 100% {
-            transform: none;
-            }
-        }
+        transform: rotateX(85deg) translateZ(-150px);
     `
 
     let message = `
@@ -72,15 +54,39 @@ const mainView = (state, emit) => {
         height: 0;
         border-left: 50px solid transparent;
         border-right: 50px solid transparent;
-        border-bottom: 100px solid ${colors.secondaryColor};
+        border-bottom: 100px solid ${colors.tertiaryColor};
         margin: 30%;
         background: radial-gradient(circle at 50% 50%, #208ab4 0%, #6fbfff 30%, #4381b2 100%);
         transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
         position: absolute;
-        animation: move-eye-skew 5s ease-out infinite;
     `
 
-    const onclick = () => {
+    let bounce = animation([
+        { transform: 'translateY(0%)' },
+        { transform: 'translateY(-10%)' },
+        { transform: 'translateY(0%)' }
+    ], {
+        duration: 500,
+        fill: 'forwards'
+    })
+
+    let reveal = animation([
+        { opacity: 0 },
+        { opacity: 1 }
+    ], {
+        duration: 500,
+        fill: 'forwards'
+    })
+
+    const onclick = (e) => {
+        bounce(e.target, () => {
+            console.log('bounce')
+        }).play()
+
+        reveal(e.target, () => {
+            console.log('reveal')
+        }).play()
+
         emit('message:new')
     }
 

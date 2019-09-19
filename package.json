@@ -23,6 +23,7 @@
   "dependencies": {
     "@withkoji/vcc": "^1.0.8",
     "choo": "^7.0.0",
+    "nanoanimation": "^2.1.0",
     "parcel-bundler": "^1.12.3"
   },
   "devDependencies": {
