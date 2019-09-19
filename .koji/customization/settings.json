@@ -1,20 +1,41 @@
 {
-    "settings": {
-      "name": "Hello World"
-    },
-    "@@editor": [
-      {
-        "key": "settings",
-        "name": "App settings",
-        "icon": "⚙️",
-        "source": "settings.json",
-        "fields": [
-          {
-            "key": "name",
-            "name": "App name",
-            "type": "text"
-          }
-        ]
-      }
-    ]
-  }
+  "settings": {
+    "name": "Hello World",
+    "fontFamily": "",
+    "message1": "It is certain",
+    "message2": "It is decidedly so",
+    "message3": "Without a doubt",
+    "message4": "Yes - definitely",
+    "message5": "You may rely on it",
+    "message6": "As I see it, yes",
+    "message7": "Most likely",
+    "message8": "Outlook good",
+    "message9": "Yes",
+    "message10": "Signs point to yes",
+    "message11": "Reply hazy, try again",
+    "message12": "Ask again later",
+    "message13": "Better not tell you now",
+    "message14": "Cannot predict now",
+    "message15": "Concentrate and ask again",
+    "message16": "Don't count on it",
+    "message17": "My reply is no",
+    "message18": "My sources say no",
+    "message19": "Outlook not so good",
+    "message20": "Very doubtful"
+  },
+  "@@editor": [
+    {
+      "key": "settings",
+      "name": "App settings",
+      "icon": "⚙️",
+      "source": "settings.json",
+      "fields": [
+        {
+          "key": "name",
+          "name": "App name",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

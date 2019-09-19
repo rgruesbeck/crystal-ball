@@ -1,0 +1,38 @@
+{
+  "colors": {
+    "backgroundColor": "#a8ffa9",
+    "primaryColor": "#ff7591",
+    "secondaryColor": "#ffb750",
+    "tertiaryColor": "#ffe070"
+  },
+  "@@editor": [
+    {
+      "key": "colors",
+      "name": "Colors",
+      "icon": "🎨",
+      "source": "colors.json",
+      "fields": [
+        {
+          "key": "backgroundColor",
+          "name": "Background color",
+          "type": "color"
+        },
+        {
+          "key": "primaryColor",
+          "name": "Primary Color",
+          "type": "color"
+        },
+        {
+          "key": "secondaryColor",
+          "name": "Secondary Color",
+          "type": "color"
+        },
+        {
+          "key": "tertiaryColor",
+          "name": "Tertiary Color",
+          "type": "color"
+        }
+      ]
+    }
+  ]
+}
