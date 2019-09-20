@@ -25,8 +25,23 @@ const randomBetween = (min, max, int = false) => {
 // pick random element from a list
 const pickFromList = (list) => list[randomBetween(0, list.length - 1, true)]
 
+// convert color hex to rgba
+const hexToRgba = (hex, opacity) => {
+    let h=hex.replace('#', '');
+    h =  h.match(new RegExp('(.{'+h.length/3+'})', 'g'));
+
+    for (let i=0; i<h.length; i++) {
+        h[i] = parseInt(h[i].length==1? h[i]+h[i]:h[i], 16);
+    }
+
+    if (typeof opacity != 'undefined')  h.push(opacity);
+
+    return 'rgba('+h.join(',')+')';
+}
+
 export {
     between,
+    hexToRgba,
     map,
     pickFromList,
     randomBetween

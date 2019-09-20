@@ -1,9 +1,9 @@
 {
   "colors": {
-    "backgroundColor": "#a8ffa9",
-    "primaryColor": "#ff7591",
-    "secondaryColor": "#ffb750",
-    "tertiaryColor": "#ffe070"
+    "backgroundColor": "#F1F2EB",
+    "primaryColor": "#F1F2EB",
+    "secondaryColor": "#58355E",
+    "tertiaryColor": "#9E4770"
   },
   "@@editor": [
     {
